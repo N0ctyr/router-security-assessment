@@ -1,13 +1,68 @@
-Starting Nmap 7.95 ( https://nmap.org ) at 2025-11-30 06:16 EST
-Nmap scan report for 192.168.1.1
-Host is up (0.0061s latency).
-Not shown: 999 filtered tcp ports (no-response)
-PORT   STATE SERVICE
-80/tcp open  http
-|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)
-|_http-dombased-xss: Couldn't find any DOM based XSS.
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-02 08:43 EST
+Nmap scan report for 192.168.X.X
+Host is up (0.0042s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT   STATE    SERVICE
+21/tcp filtered ftp
+22/tcp filtered ssh
+23/tcp open     telnet
+53/tcp open     domain
+80/tcp open     http
+| http-litespeed-sourcecode-download: 
+| Litespeed Web Server Source Code Disclosure (CVE-2010-2333)
+| /index.php source code:
+| <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\x0D
+| <html xmlns="http://www.w3.org/1999/xhtml">\x0D
+|     <head>\x0D
+|         <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />\x0D
+|         <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">\x0D
+|         <meta content="no-cache" http-equiv="Pragma" />\x0D
+|         <title>Waiting...</title>\x0D
+|         <script type="text/javascript">\x0D
+|             var pageName = '/';\x0D
+|             top.location.replace(pageName);\x0D
+|         </script>\x0D
+|     </head>\x0D
+|     <body></body>\x0D
+|_</html>\x0D
+| http-phpmyadmin-dir-traversal: 
+|   VULNERABLE:
+|   phpMyAdmin grab_globals.lib.php subform Parameter Traversal Local File Inclusion
+|     State: UNKNOWN (unable to test)
+|     IDs:  CVE:CVE-2005-3299
+|       PHP file inclusion vulnerability in grab_globals.lib.php in phpMyAdmin 2.6.4 and 2.6.4-pl1 allows remote attackers to include local files via the $__redirect parameter, possibly involving the subform array.
+|       
+|     Disclosure date: 2005-10-nil
+|     Extra information:
+|       ../../../../../etc/passwd :
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|   
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3299
+|_      http://www.exploit-db.com/exploits/1244/
 |_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)
 |_http-csrf: Couldn't find any CSRF vulnerabilities.
-|_http-vuln-cve2014-3704: ERROR: Script execution failed (use -d to debug)
+| http-fileupload-exploiter: 
+|   
+|     Couldn't find a file-type field.
+|   
+|_    Couldn't find a file-type field.
+|_http-majordomo2-dir-traversal: ERROR: Script execution failed (use -d to debug)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+MAC Address: XX:XX:XX:XX:XX:XX (Huawei Technologies)
 
-Nmap done: 1 IP address (1 host up) scanned in 272.62 seconds
+Nmap done: 1 IP address (1 host up) scanned in 116.17 seconds

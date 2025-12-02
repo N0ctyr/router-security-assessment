@@ -49,3 +49,9 @@ Risk Level: Medium-High
 - Enable HTTPS if supported by the router.
 - Add firewall rules to block unnecessary internal + external ports.
 - Keep router firmware up to date.
+
+🔹 Data Sanitization
+To ensure no sensitive or personally identifiable information is exposed, all MAC addresses and internal IP segments were anonymized using sed rules.
+Example of applied sanitization:
+sed -i \ -e 's/[0-9A-Fa-f]\{2\}(:[0-9A-Fa-f]\{2\})\{5\}/XX:XX:XX:XX:XX:XX/g' \ -e 's/MAC Address: .*/MAC Address: XX:XX:XX:XX:XX:XX/g' \ scans/*.txt 
+This step ensures that the report can be safely published without leaking network device identifiers.

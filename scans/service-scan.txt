@@ -1,0 +1,15 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-12-02 08:39 EST
+Nmap scan report for 192.168.X.X
+Host is up (0.0083s latency).
+Not shown: 995 closed tcp ports (reset)
+PORT   STATE    SERVICE  VERSION
+21/tcp filtered ftp
+22/tcp filtered ssh
+23/tcp open     telnet   Huawei Home Gateway telnetd
+53/tcp open     domain?
+80/tcp open     ssl/http
+MAC Address: XX:XX:XX:XX:XX:XX (Huawei Technologies)
+Service Info: Device: broadband router
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 146.20 seconds
